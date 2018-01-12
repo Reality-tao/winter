@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.main{
+    width: 100%;
+}
+.head{
+    height: 93px;
+    width: 100%;
+}
+.mid{
+    background-color: brown;
+    height: 564px;
+    width: 100%;
+    background: url(../img/mi2.png);
+}
+.loginform{
+    /*position: relative;*/
+    /*top: 32px;*/
+    /*left: 830px;*/
+    float: right;
+    position: relative;
+    top: 32px;
+    right: 109px;
+    padding: 10px;
+    background-color: #ffffff;
+    height: 504px;
+    width: 390px;
+}
+.deng{
+    text-decoration: none;
+    font-size: 24px;
+}
+.tail{
+    height: 172px;
+    width: 100%;
+}
