@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*body{*/
+        /*margin: auto;*/
+        /*}*/
+        /*.aa{*/
+        /*margin: auto;*/
+        /*width: 200px;*/
+        /*height: 200px;*/
+        /*background-image: url("../img/sg.png");*/
+        /*background-position: 50%  40%;*/
+        /*}*/
+        div[class~="a"]{
+            width: 400px;
+            height: 400px;
+        }
+        .test1{
+            background-color: red;
+            position: absolute;
+
+        }
+        .test2{
+            background-color: blue;
+            float: left;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            z-index: 10;
+        }
+        .test3{
+            background-color: green;
+            float: left;
+            position: relative;
+            left: -200px;
+            top: 200px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="aa">-->
+
+    <!--</div>-->
+    <div class="test">
+        <div class="test1 a">1</div>
+        <div class="test2 a">2</div>
+        <div class="test3 a">3</div>
+    </div>
+</body>
+</html>

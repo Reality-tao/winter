@@ -19,9 +19,6 @@ a{
     background: url(../img/mi2.png);
 }
 .loginform{
-    /*position: relative;*/
-    /*top: 32px;*/
-    /*left: 830px;*/
     float: right;
     position: relative;
     top: 32px;
@@ -31,9 +28,22 @@ a{
     height: 504px;
     width: 390px;
 }
+table{
+    width: 390px;
+}
+.login{
+    position: relative;
+}
+tr{
+    text-align: center;
+}
 .deng{
     text-decoration: none;
     font-size: 24px;
+    color: #f45606;
+}
+.deng a{
+    color: #f45606;
 }
 .tail{
     height: 172px;
