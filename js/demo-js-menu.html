@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            border: 1px solid #413B36;
+            background-color: cadetblue;
+            width: 150px;
+            display: none;
+            position: absolute;
+        }
+        ul li{
+            border: 2px solid #e34935;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul-menu" class="ul-cn">
+        <li links="http://www.baidu.com">百度</li>
+        <li links="http://www.sina.com">新浪</li>
+        <li links="http://www.qq.com">腾讯</li>
+        <li links="http://www.xiaomi.com">小米</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById("ul-menu");
+        var aLi = document.getElementsByTagName("li");
+
+        document.oncontextmenu = function (e) {
+            e = e || window.event;
+            oUl.style.display = 'block';
+            oUl.style.top = e.clientY + 'px';
+            oUl.style.left = e.clientX + 'px';
+            return false;
+        }
+        document.onclick = function () {
+            oUl.style.display = 'none';
+        }
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].onclick = function () {
+                var thisLink = this.getAttribute("links");
+                var thisText = this.innerText;
+                alert(thisText);
+                location.href = thisLink;
+            }
+        }
+    </script>
+</body>
+</html>

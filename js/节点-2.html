@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span>11</span>
+
+    <!--注释-->
+
+    <!--注释-->
+
+    <!--注释-->
+
+    <span>22</span>
+
+
+    <a href="">33</a>
+
+    <script>
+        var aSpan = document.getElementsByTagName("span")[0];
+        var allSpan = [];
+        var span2 = next(aSpan);
+
+        function next(obj) {
+            var nextNode = obj;
+            do{
+                nextNode = nextNode.nextSibling;
+            } while (nextNode && nextNode.nodeType != 1)
+            return nextNode;
+        }
+
+        console.log(span2)
+    </script>
+</body>
+</html>

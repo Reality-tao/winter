@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #212121;
+        }
+        ul{
+            list-style-type: none;
+        }
+        img{
+            width: 492px;
+            height: 170px;
+            margin-bottom: 6px;
+        }
+        .box{
+            width: 492px;
+            height: 170px;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .radiu-btn{
+            position: absolute;
+        }
+        .radiu-btn li{
+            height: 20px;
+            width: 20px;
+            background-color: #F90;
+            opacity: 0.7;
+            filter: alpha(opacity = 70);
+            border-radius: 50%;
+            margin-left: 10px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+        }
+        .left-btn{
+            left: 10px;
+            bottom: 13px;
+        }
+        .right-btn{
+            right: 10px;
+            bottom: 13px;
+        }
+        .radiu-btn .active{
+            background-color: #F60;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <ul>
+                <li><img src="../img/hongmi5.jpg" alt=""></li>
+                <li><img src="../img/tv.jpg" alt=""></li>
+                <li><img src="../img/toy.jpg" alt=""></li>
+                <li><img src="../img/mix.jpg" alt=""></li>
+                <li><img src="../img/com.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="radiu-btn left-btn">
+                <li this-type="prev">&lt;</li>
+                <li this-type="next">&gt;</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="radiu-btn right-btn">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aBox = document.getElementsByClassName("box")[0];
+        var aUl = document.getElementsByTagName("ul");
+        var aImg = aUl[0].getElementsByTagName("li");
+        var aLbt = aUl[1].getElementsByTagName("li");
+        var aRbt = aUl[2].getElementsByTagName("li");
+
+        var globalIndex = 0;
+        var isInterval = true;
+
+        function changeImg(index) {
+            if(index == 5){
+                index = 0;
+                globalIndex = 0;
+            }
+            if(index == -1){
+                index = 4;
+                globalIndex = 4;
+            }
+            for(var k = 0; k < aRbt.length; k++){
+                aRbt[k].className = '';
+                aImg[k].style.display = 'none';
+            }
+            aRbt[index].className = 'active';
+            aImg[index].style.display = 'block';
+        }
+
+        for(var i = 0; i < aRbt.length; i++){
+            aRbt[i].index = i;
+            aRbt[i].onmouseover = function () {
+                globalIndex = this.index;
+                changeImg(globalIndex);
+            }
+        }
+
+        for(var k = 0; k <aLbt.length; k++){
+            aLbt[k].onclick = function () {
+                var thisType = this.getAttribute("this-type");
+                if(thisType == "next") {
+                    changeImg(++globalIndex);
+                }else{
+                    changeImg(--globalIndex);
+                }
+            }
+        }
+
+
+        aBox.onmouseover = function () {
+            isInterval = false;
+        }
+        aBox.onmouseout = function () {
+            isInterval = true;
+        }
+
+        setInterval(function(){
+            if(isInterval) {
+                changeImg(++globalIndex)
+            }
+        },800)
+    </script>
+</body>
+</html>

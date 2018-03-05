@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+            text-align: center;
+        }
+        lu{
+            list-style-type: none;
+        }
+        ul li{
+            height: 40px;
+        }
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>文字1</li>
+            <li>文字2</li>
+            <li>文字3</li>
+            <li>文字4</li>
+        </ul>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].onclick = function () {
+                for (var j = 0; j < aLi.length; j++){
+                    aLi[j].classList.remove("active");
+                }
+                this.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>

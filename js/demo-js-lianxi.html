@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        for(var i = 1;i <= 10;i++){
+//            for(var j = 1; j <= 10-i; j++){
+//                document.write("&nbsp;");
+//            }
+//            for(var k = 1; k <= 2*i-1; k++){
+//                document.write("*")
+//            }
+//            document.write("<br/>")
+//        }
+//        for(var i = 0;i < 9;i++){
+//            if(i = 0){
+//                for(var j = 0; j < 8; j++) {
+//                    document.write("&nbsp;");
+//                }
+//                document.write("*")
+//            }else if(i = 8){
+//                for(var k = 0; k < 17; k++) {
+//                    document.write("*");
+//                }
+//            }else{
+//                for (var a = 0; a < 8-i; a++){
+//                    document.write("&nbsp;");
+//                }
+//                document.write("*");
+//                for (var b = 0; b < i*2-1; b++){
+//                    document.write("&nbsp;");
+//                }
+//                document.write("*");
+//            }
+//            document.write("<br>");
+//        }
+//        for(var i = 100; i <= 1000; i++){
+//            var kay = Math.sqrt(i);
+//            for(var j = 2; j < kay; j++)
+//                if(i%j == 0)
+//                    break;
+//            if( j > kay)
+//                console.log(i);
+//        }
+//        var myDate = new Date();
+//        document.write(myDate.getFullYear() + "年" + myDate.getMonth()+1 + "月" + myDate.getDate() + "日" + myDate.getHours() + "时" + myDate.getMinutes() + "分" + myDate.getSeconds() + "秒" + " " + "星期" + myDate.getDay());
+//        var s1 = ['1','2','3','4','5','6','7'];
+//        var s2 = ['a','b','c'];
+//        var s3 = new Array();
+//        var x = s1.length;
+//        var y = s2.length;
+//        console.log(s1);
+//        console.log(s3);
+//        function Merge() {
+//            var i = 0;
+//            if( x > y)
+//                i = x;
+//            else
+//                i = y;
+//            for(var j = 0; j < i; j ++){
+//                s3[j*2] = s1[j];
+//                s3[j*2+1] = s2[j];
+//            }
+//            for(var m = 0; m <= s3.length; m++){
+//                if(s3[m] == " "){
+//                    s3[m] = s3[m+1];
+//                    s3[m+1] = s3[m+2];
+//                }
+//            }
+//            document.write(s3);
+//        }
+//        Merge();
+//        function aa(n) {
+//            if(n%3 ==0 && n%5 ==0 && n%7 ==0){
+//                return n;
+//            }
+//        }
+//        for(var i = 0; i < 1000; i++){
+//            console.log(aa(i));
+//        }
+        function sum(n) {
+            if(n == 1){
+                return 1;
+            }
+            return sum(n-1) + n;
+        }
+        console.log(sum(4));
+        function fab(n) {
+            var a = 1, b = 1, sum;
+            if(n <= 2){
+                return ;
+            }else{
+                for(var i = 3; i <= n; i++){
+                    sum = a + b;
+                    a = b;
+                    b = sum;
+                }
+                return sum;
+            }
+        }
+    </script>
+</body>
+</html>

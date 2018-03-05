@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            padding-top: 10px;
+            margin: 0 auto;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+        .input{
+            text-align: center;
+        }
+        .box-style{
+            position: relative;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: #212121;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <input type="button" value="变高" >
+        <input type="button" value="变宽">
+        <input type="button" value="变色">
+        <input type="button" value="隐藏">
+        <input type="button" value="重置">
+        <div id="box" class="box-style" style="display: block"></div>
+    </div>
+    <script>
+        var oDiv = document.getElementById("box");
+        var aBtn = document.getElementsByTagName("input");
+        var arr1 = ["width","height","backgroundColor","display"];
+        var arr2 = ["300px","300px","red","none"]
+
+
+        for(var i = 0; i < aBtn.length; i++){
+            aBtn[i].index = i
+            aBtn[i].onclick =function () {
+                var styleName = arr1[this.index];
+                var styleVal = arr2[this.index];
+                oDiv.style[styleName] = styleVal;
+                this.index == 4? oDiv.style.cssText = "":oDiv.style[styleName] = styleVal;
+            }
+        }
+    </script>
+</body>
+</html>

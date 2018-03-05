@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box"></div>
+    <span class="aa">11</span>
+    <a href="" class="aa">22</a>
+    <img src="" alt="">
+    <script>
+        var classAa = getClassName("aa");
+
+            function getClassName(className) {
+                if(document.getElementsByClassName("")){
+                    return document.getElementsByClassName(className);
+                }else {
+                    var all = document.getElementsByTagName("*");
+                    var thisArr = [];
+                    for (var i = 0; i < all.length; i++) {
+                        if (all[i].className == className) {
+                            thisArr.push(all[i])
+                        }
+                    }
+                    return thisArr;
+                }
+            }
+        document.querySelector( )
+        console.log(classAa)
+    </script>
+</body>
+</html>

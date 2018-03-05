@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #nav-bar .active{
+            background-color: #e34935;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav-main{
+            width: 100%;
+        }
+        #content {
+            margin: 0 auto;
+            width: 1226px;
+        }
+        #nav-tab{
+            position: relative;
+            top: -60px;
+            left: 20px;
+            opacity: 0.8;
+        }
+        #nav-tab span{
+            text-align: center;
+            line-height: 40px;
+            width: 40px;
+            height: 40px;
+            background-color: #ffac13;
+            font-size: 20px;
+            display: inline-block;
+            border-radius: 50%;
+            color: white;
+        }
+        #nav-bar{
+            width: 400px;
+        }
+        #nav-bar ul{
+            position: relative;
+            top: -100px;
+            left: 955px;
+            width: 300px;
+            list-style-type: none;
+            overflow: hidden;
+            opacity: 0.8;
+        }
+        #nav-bar ul li{
+            margin-left: 10px;
+            line-height: 40px;
+            text-align: center;
+            float: left;
+            width: 40px;
+            height: 40px;
+            background-color: #ffac13;
+            color: white;
+            border-radius: 50%;
+        }
+        #content img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-main">
+        <div id="content">
+            <img src="../img/mix.jpg" alt="" style="display: block;">
+            <img src="../img/com.jpg" alt="">
+            <img src="../img/hongmi5.jpg" alt="">
+            <img src="../img/tv.jpg" alt="">
+            <img src="../img/toy.jpg" alt="">
+            <div id="nav-tab">
+                <span id="left">&lt;</span>
+                <span id="right">&gt;</span>
+            </div>
+            <div id="nav-bar">
+                <ul>
+                    <li class="active">1</li>
+                    <li class="" >2</li>
+                    <li class="">3</li>
+                    <li class="">4</li>
+                    <li class="">5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oImg = document.getElementById("content").getElementsByTagName("img");
+        var aLi = document.getElementById("nav-bar").getElementsByTagName("li");
+        var oSpan1 = document.getElementById("left");
+        var oSpan2 = document.getElementById("right");
+
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                for(var j = 0; j < aLi.length; j++){
+                    aLi[j].className = '';
+                    oImg[j].style.display = 'none';
+                }
+                oImg[this.index].style.display = 'block';
+                this.className = 'active';
+            }
+        }
+        function Make() {
+            for(var i = 0; i < aLi.length; i++){
+                aLi[i].index = i;
+                if(aLi[aLi[i].index].className != ""){
+                    return i;
+                }
+            }
+
+        }
+        oSpan2.onclick = function () {
+            var flag = Make();
+            for(var j = 0; j < aLi.length; j++){
+                aLi[j].className = '';
+                oImg[j].style.display = 'none';
+            }
+            if(flag == 4){
+                oImg[0].style.display = 'block';
+                aLi[0].className = 'active';
+            }else {
+                oImg[flag + 1].style.display = 'block';
+                aLi[flag + 1].className = 'active';
+            }
+        }
+        oSpan1.onclick = function () {
+            var flag = Make();
+            for(var j = 0; j < aLi.length; j++){
+                aLi[j].className = '';
+                oImg[j].style.display = 'none';
+            }
+            if(flag == 0){
+                oImg[4].style.display = 'block';
+                aLi[4].className = 'active';
+            }else {
+                oImg[flag - 1].style.display = 'block';
+                aLi[flag - 1].className = 'active';
+            }
+        }
+
+    </script>
+</body>
+</html>

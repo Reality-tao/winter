@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var which = window.confirm("不知道今天吃啥");
+        if(which) {
+            var people = window.prompt("几个人吃啊?")
+            var choice = Math.random();
+            var veg = "";
+            choice = choice * 10;
+            choice = Math.floor(choice);
+            switch (choice) {
+                case 0:
+                    veg = "鸡肉"
+                    break;
+                case 1:
+                    veg = "羊肉"
+                    break;
+                case 2:
+                    veg = "牛肉"
+                    break;
+                case 3:
+                    veg = "土豆"
+                    break;
+                case 4:
+                    veg = "白菜"
+                    break;
+                case 5:
+                    veg = "菠菜"
+                    break;
+                case 8:
+                    veg = "面条"
+                    break;
+                case 9:
+                    veg = "米饭"
+                    break;
+                default:
+                    veg = "个屁！！"
+            }
+            alert(people +"个人吃" + veg);
+        }else {
+            alert("呵呵")
+        }
+    </script>
+</body>
+</html>

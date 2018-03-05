@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            margin: 0 auto;
+            width: 100%;
+        }
+        .box-hd{
+            margin: 0 auto;
+            width: 600px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #212121;
+            overflow: hidden;
+        }
+        .box-hd ul{
+            width: 600px;
+            list-style-type: none;
+        }
+        .box-hd ul li{
+            text-align: center;
+            width: 100px;
+            color: white;
+            float: left;
+        }
+        .box-fot{
+            padding: 10px 40px;
+            border: 2px solid #212121;
+            margin: 0 auto;
+            width: 516px;
+            position: relative;
+        }
+        .box-fot ul li{
+            height: 30px;
+
+        }
+        .box-fot ul:nth-child(2){
+            position: relative;
+            top: -90px;
+            display: none;
+        }
+        .box-fot ul:nth-child(3){
+            position: relative;
+            top: -90px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <div class="content">
+            <div class="box-hd">
+                <ul>
+                    <li>第一课</li>
+                    <li>第二课</li>
+                    <li>第三课</li>
+                </ul>
+            </div>
+            <div class="box-fot">
+                <ul>
+                    <li>
+                        网页效果分析
+                    </li>
+                    <li>
+                        网页效果分析
+                    </li>
+                    <li>
+                        网页效果分析
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        网页分析
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        网页数据分析
+                    </li>
+                    <li>
+                        网页数据分析
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            var oDiv1 = document.getElementsByClassName("box-hd")[0];
+            var aLi1 = oDiv1.getElementsByTagName("li");
+            var oDiv2 = document.getElementsByClassName("box-fot")[0];
+            var aUl = oDiv2.getElementsByTagName("ul");
+            for(var i = 0; i < aLi1.length; i++) {
+                aLi1[i].index = i
+                aLi1[i].onmouseover = function () {
+                    for(var j = 0; j < aLi1.length; j++){
+
+                    }
+
+                    this.style.backgroundColor = "#ccc";
+                    aUl[this.index].style.display = "block";
+                }
+            }
+        </script>
+</body>
+</html>

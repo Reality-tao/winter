@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var gfriend = {
+            name: "迪丽热巴",
+            age: "25",
+            height: "168",
+        }
+        var words = window.prompt("你妈问:“你有没有女朋友啊”");
+        if(words == "没有" || words == "有"){
+            if(words == "有"){
+                alert("叫什么啊,怎么样啊?");
+                alert("我:“他叫" + gfriend.name + "," + "年龄" + gfriend.age + "," + "身高" + gfriend.height +",肤白貌美大长腿！！”");
+                alert("哪个学校的呀?");
+                gfriend.school = window.prompt();
+                gfriend.xueyuan = window.prompt();
+                alert("他是" + gfriend.school + gfriend.xueyuan + "的学生");
+                alert("那真是挺好！");
+            }else{
+                alert("你妈:“ 完犊子, ~_~!”");
+            }
+        }else{
+            alert("别打岔，我问你正经事呢！");
+        }
+    </script>
+</body>
+</html>

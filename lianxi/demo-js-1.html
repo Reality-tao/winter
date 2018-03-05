@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .da{
+            width: 100%;
+        }
+        .content{
+            width: 1266px;
+            margin: 0 auto;
+        }
+        .main{
+            display: table;
+            margin: 0 auto;
+        }
+        ul{
+            list-style-type: none;
+            width: 200px;
+
+        }
+        .header{
+            width: 200px;
+            height: 40px;
+            background-color: #212121;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .mid ul {
+            border: 1px solid #212121;
+            width: 198px;
+        }
+        .mid ul li{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul class="main">
+            <li class="mid">
+                <div class="header">管理区</div>
+                <ul>
+                    <li>管理1</li>
+                    <li>管理2</li>
+                    <li>管理3</li>
+                </ul>
+            </li>
+            <li class="mid">
+                <div class="header">交流区</div>
+                <ul>
+                    <li>交流1</li>
+                    <li>交流2</li>
+                    <li>交流3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var flag = true;
+        var aDiv = getClassName("header");
+
+        function getClassName(className) {
+            if(document.getElementsByClassName("")){
+                return document.getElementsByClassName(className);
+            }else {
+                var all = document.getElementsByTagName("*");
+                var thisArr = [];
+                for (var i = 0; i < all.length; i++) {
+                    if (all[i].className == className) {
+                        thisArr.push(all[i])
+                    }
+                }
+                return thisArr;
+            }
+        }
+
+        function next(obj) {
+            var nextNode = obj;
+            do{
+                nextNode = nextNode.nextSibling;
+            } while (nextNode && nextNode.nodeType != 1)
+            return nextNode;
+        }
+
+
+        for(var i = 0; i < aDiv.length; i++){
+            aDiv[i].isClick = true;
+            aDiv[i].onclick = function () {
+                var nextNode = next(this);
+                if(this.isClick == true) {
+                    nextNode.style.display = 'none';
+                    this.isClick = false;
+                }else{
+                    nextNode.style.display = 'block';
+                    this.isClick = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

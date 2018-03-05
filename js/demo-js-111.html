@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .box-hd{
+            margin: 0 auto;
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ddd;
+        }
+        .box-botm{
+            width: 800px;
+            height: 100px;
+        }
+        .box-botm ul{
+            list-style-type: none;
+            position: relative;
+            left: 380px;
+        }
+        .box-botm ul img{
+            width: 100px;
+            height: 100px;
+        }
+        .box-botm ul li{
+            width: 150px;
+            height: 100px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="box-hd"><img src="../img/star-box-1.png" alt="" id="big-img"></div>
+    <div class="box-botm">
+        <ul>
+            <li><img src="../img/star-box-1.png" alt=""></li>
+            <li><img src="../img/star-box-3.png" alt=""></li>
+            <li><img src="../img/star-box-4.png" alt=""></li>
+            <li><img src="../img/star-box-5.png" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName("img");
+        var oDiv = document.getElementById("big-img");
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].onmouseover = function () {
+                var thisSrc = this.getAttribute("src");
+                oDiv.setAttribute("src",thisSrc);
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

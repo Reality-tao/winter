@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var lunch = window.confirm("中午吃啥?");
+        var isFor = true;
+        if(lunch){
+            var personName = new Array();
+            var personNum = window.prompt("几个人啊?");
+            if(isNaN(personNum)){
+                alert("输入的不是数字!")
+            }
+            for(var i = 0; i < personNum; i++){
+                personName[i] = window.prompt("第" + ( i + 1) + "个人叫啥?");
+                if(!personName[i]){
+                    isFor = false;
+                    break;
+                }
+            }
+            if(isFor){
+                for(var j = 0; j < personName.length; j++){
+                    var string1 = personName[j];
+
+                    var a = Math.random();
+                    a = Math.floor(a * 10);
+                    switch (a) {
+                        case 0:
+                            alert(string1 + "吃土豆丝")
+                            break;
+                        case 1:
+                            alert(string1 + "吃萝卜丝")
+                            break;
+                        case 2:
+                            alert(string1 + "吃地瓜丝")
+                            break;
+                        case 3:
+                            alert(string1 + "吃西红柿丝")
+                            break;
+                        case 4:
+                            alert(string1 + "吃白菜丝")
+                            break;
+                        default:
+                            alert(string1 + "吃个屁")
+                    }
+                }
+            }else{
+                alert("爱吃不吃")
+            }
+
+        }else{
+            alert("取消");
+        }
+    </script>
+</body>
+</html>

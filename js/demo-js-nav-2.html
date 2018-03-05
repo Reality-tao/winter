@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .right-bt .active{
+            background-color: #ffac13;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .content{
+            width: 700px;
+            height: 300px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .img img{
+            width: 700px;
+            height: 300px;
+        }
+        .img{
+            width: 700px;
+            height: 300px;
+
+        }
+        .img li{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0;
+        }
+        .left-bt ul{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        .left-bt ul li{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #e34935;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+        .right-bt {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .right-bt ul li{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #e34935;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="box">
+        <div class="img">
+            <ul class="clearfix" id="img-list">
+                <li style="opacity: 1"><img src="../img/mix.jpg" alt=""></li>
+                <li><img src="../img/com.jpg" alt=""></li>
+                <li><img src="../img/hongmi5.jpg" alt=""></li>
+                <li><img src="../img/tv.jpg" alt=""></li>
+                <li><img src="../img/toy.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="left-bt" id="left-btn">
+            <ul>
+                <li this-type="prev">&lt;</li>
+                <li this-type="next">&gt;</li>
+            </ul>
+        </div>
+        <div class="right-bt" id="num-bar">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aNum = document.getElementById("num-bar").getElementsByTagName("li");
+        var aImg = document.getElementById("img-list").getElementsByTagName("li");
+        var aBtn = document.getElementById("left-btn").getElementsByTagName("li");
+        var oBox  =document.getElementById("box");
+
+        var glolbalIndex = 0;
+        var isInterval = true;
+        oBox.onmouseover = function () {
+            isInterval = false;
+        }
+        oBox.onmouseout = function () {
+            isInterval = true;
+        }
+        setInterval(function(){
+            if(isInterval) {
+                changeImg(glolbalIndex + 1)
+            }
+        },800)
+
+        for(var k = 0; k < aBtn.length; k++){
+            aBtn[k].onclick = function () {
+                var thisBtn = this.getAttribute("this-type");
+                if(thisBtn == "next"){
+                    changeImg(glolbalIndex + 1)
+                }else{
+                    changeImg(glolbalIndex - 1)
+                }
+            }
+        }
+
+        for(var i = 0; i < aNum.length; i++){
+            aNum[i].index = i;
+            aNum[i].onmouseover = function () {
+                changeImg(this.index);
+            }
+        }
+
+        function changeImg(index) {
+            if(index == 5){
+                index = 0;
+            }else if(index == -1){
+                index = 4;
+            }
+            for(var j = 0; j < aNum.length; j++){
+                aNum[j].className = "";
+                aImg[j].style.opacity = 0;
+            }
+            aNum[index].className = "active";
+            aImg[index].style.opacity = 1;
+            glolbalIndex = index;
+        }
+
+
+    </script>
+</body>
+</html>

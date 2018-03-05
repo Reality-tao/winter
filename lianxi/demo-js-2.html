@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            width: 400px;
+            height: 400px;
+            float: left;
+        }
+        .father img{
+            width: 400px;
+            height: 400px;
+        }
+        .move-box{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            opacity: 0.7;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .child{
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            display: none;
+        }
+        .child img{
+            width: 800px;
+            height: 800px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <img src="../img/miche.jpg" alt="">
+        <div class="move-box"></div>
+    </div>
+    <div class="child">
+        <img src="../img/miche.jpg" alt="">
+    </div>
+    <script>
+        var aSbox = document.getElementsByClassName("father")[0];
+        var aSimg = aSbox.getElementsByTagName("img")[0];
+        var aBbox = document.getElementsByClassName("child")[0];
+        var aBimg = aBbox.getElementsByTagName("img")[0];
+
+        var oMbox = document.getElementsByClassName("move-box")[0];
+
+        aSbox.onmousemove= function (e) {
+            oMbox.style.display = 'block';
+            aBbox.style.display = 'block';
+            var thisX = e.clientX - oMbox.offsetLeft;
+            var thisY = e.clientY - oMbox.offsetTop;
+            aSbox.onmousemove = function (e) {
+                var top = e.clientY  - oMbox.offsetWidth/2;
+                var left = e.clientX - oMbox.offsetWidth/2;
+
+                if(top < 0){
+                    top = 0;
+                }
+                if(left < 0){
+                    left = 0;
+                }
+                var maxTop = aSimg.offsetHeight - oMbox.offsetHeight;
+                var maxLeft= aSimg.offsetWidth - oMbox.offsetWidth;
+                if(top >maxTop){
+                    top = maxTop;
+                }
+                if(left > maxLeft){
+                    left = maxLeft;
+                }
+//                oMbox.style.left = e.clientX - oMbox.offsetWidth/2 + "px";
+//                oMbox.style.top = e.clientY  - oMbox.offsetWidth/2 + "px";
+
+                oMbox.style.top = top + "px";
+                oMbox.style.left = left + "px";
+                aBimg.style.left= - left*2 + "px";
+                aBimg.style.top= - top*2 + "px";
+            }
+            aSbox.onmouseup = function (e) {
+                aSbox.onmousemove = null;
+                oMbox.style.display = 'none';
+                aBbox.style.display = 'none';
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 60px;
+            background-color: red;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var aDiv = document.getElementsByTagName("div");
+        var timer;
+        aDiv[0].onmouseover = function () {
+            timer = setInterval(function () {
+                aDiv[0].style.width = aDiv[0].offsetWidth + 10 +"px";
+                if(aDiv[0].offsetWidth >=600) {
+                    clearInterval(timer)
+                }
+            },50)
+        }
+        aDiv[0].onmouseout = function () {
+            timer = setInterval(function () {
+                aDiv[0].style.width = aDiv[0].offsetWidth - 10 +"px";
+                if(aDiv[0].offsetWidth <= 300) {
+                    clearInterval(timer)
+                }
+            },50)
+        }
+    </script>
+</body>
+</html>

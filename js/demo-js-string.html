@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="alert('aaa')">号</button>
+    <script>
+//        var x = Math.random();
+//        var y = Math.random();
+//        var r = x>y?x:y;
+//        console.log(r);
+//        var today = new Date();
+//        var year = today.getFullYear();
+//        if(year%400 == 0){
+//            console.log("是");
+//        }else if(year%4 == 0 && year%100 != 0){
+//            console.log("是");
+//        }else {
+//            console.log("不是");
+//        }
+//        var age = window.prompt("年龄")
+//        if(age < 14){
+//            alert("儿童")
+//        }else if(14 <= age && age <24){
+//            alert("青少年")
+//        }else if(24 < age && age < 40){
+//            alert("青年")
+//        }else if(40 < age && age <60){
+//            alert("中年")
+//        }else if(age >= 60){
+//            alert("老年")
+//        }
+//        var r = 1;
+//        var sum = 0;
+//        for(var i = 1; i <=10; i++){
+//            r *= i;
+//            sum += r;
+//        }
+//        console.log(sum);
+//        for(var i = 0; i <10000; i++){
+//            if((i%4) == 2 && (i%7) == 3 && (i%9) == 5){
+//                console.log(i);
+//                break;
+//            }
+//        }
+//        var x = window.prompt("1");
+//        var y = window.prompt("2");
+//
+//        function Min( x, y) {
+//            if(x<y){
+//                return x;
+//            }else {
+//                return y;
+//            }
+//        }
+//        var r = Min( x, y);
+//        console.log(r);
+//        var sum = 0;
+//        for(var i = 1; i <= 1000; i++){
+//            if(i%3 == 0 && i%5 == 0 && i%7 ==0){
+//                document.write(i + " ");
+//                sum += 1;
+//                if(sum % 6 == 0){
+//                    document.write("<br>");
+//                }
+//            }
+//        }
+        for (var i = 3; i < n; i++){
+          for (var j = 2; j <= sqrt((double)i); j++)
+              if (i % j == 0)
+                  break;
+        }
+        function factorial() {
+            for (var  j = 101; j <= 1000; j++) {
+                for (var i = 100; i <= j - 1; i++)
+                    if (j%i == 0) {
+                        break;
+                    }else {
+                        document.write(i);
+                    }
+            }
+        }
+        factorial();
+    </script>
+</body>
+</html>

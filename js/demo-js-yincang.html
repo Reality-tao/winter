@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .tips{
+            width: 200px;
+            background-color: #ffac13;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <lable><input type="checkbox">两周内自动登录</lable>
+        <div class="tips">
+            为了安全请不要再网吧内吸烟
+        </div>
+    </div>
+    <script>
+        var oTips = document.getElementsByClassName("tips")[0];
+        var oLable = document.getElementsByTagName("lable")[0];
+
+        oLable.onmouseover = function () {
+            oTips.style.display = "block";
+        }
+        oLable.onmouseout = function () {
+            oTips.style.display = "none";
+        }
+    </script>
+</body>
+</html>

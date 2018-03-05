@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">点击</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        window.onload = function(){
+            var aLi = document.getElementsByTagName('li');
+            for(var i = 0; i < aLi.length; i ++){
+                aLi[i].onmouseover = function(){
+                    this.className = 'active'
+                };
+                aLi[i].onmouseout = function(){
+                    this.className = ''
+                };
+            };
+        };
+    </script>
+</body>
+</html>

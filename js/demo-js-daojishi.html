@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>100</h1>
+    <button>开始</button>
+    <script>
+        var aTime = document.getElementsByTagName("h1")[0];
+        var oBtn = document.getElementsByTagName("button")[0];
+        var flag = 1;
+
+        oBtn.onclick = function () {
+            var timer;
+            flag = -flag;
+            oBtn.innerText = "结束";
+            timer = setInterval(function Time() {
+                if(flag == 1 || aTime.innerText == 0) {
+                    clearInterval(timer);
+                    oBtn.innerText = "开始";
+                }else {
+                    aTime.innerText = aTime.innerHTML - 1;
+                }
+            },1000);
+        }
+    </script>
+</body>
+</html>
