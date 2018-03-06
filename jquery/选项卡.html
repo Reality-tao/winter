@@ -24,15 +24,27 @@
                 $hobbys.prop('checked',false);
             });
             $("#reverse").on('click',function () {
-                for(var i = 0; i < $hobbys.length; i ++){
-                    if($hobbys.eq(i).prop("checked")){
-                        $hobbys.eq(i).prop("checked",false);
-                    }else{
-                        $hobbys.eq(i).prop("checked",true);
-                    }
-                }
-            })
-        })
+                $hobbys.each(function (index, elem) {
+                    elem.checked = !elem.checked;
+                });
+
+//                $hobbys.each(function (index, elem) {
+//                    if($(elem).prop("checked")){
+//                        $(elem).prop("checked",false);
+//                    }else{
+//                        $(elem).prop("checked",true);
+//                    }
+//                })
+
+//                for(var i = 0; i < $hobbys.length; i ++){
+//                    if($hobbys.eq(i).prop("checked")){
+//                        $hobbys.eq(i).prop("checked",false);
+//                    }else{
+//                        $hobbys.eq(i).prop("checked",true);
+//                    }
+//                }
+            });
+        });
     </script>
 </body>
 </html>
